@@ -597,7 +597,7 @@ var app = (function (Plotly) {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "svelte-jovkzz");
-    			add_location(div, file$3, 79, 0, 2098);
+    			add_location(div, file$3, 95, 0, 2384);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -640,7 +640,25 @@ var app = (function (Plotly) {
     		xaxis: { title: 'X', autorange: false },
     		yaxis: { title: 'Y', autorange: false },
     		autosize: true,
-    		margin: { l: 35, r: 35, b: 35, t: 35, pad: 0 }
+    		margin: { l: 35, r: 35, b: 35, t: 35, pad: 0 },
+    		//DRAWING A VECTOR
+    		annotations: [
+    			{
+    				x: 5,
+    				y: 10,
+    				xref: 'x',
+    				yref: 'y',
+    				ax: 0,
+    				ay: 0,
+    				axref: 'x',
+    				ayref: 'y',
+    				showarrow: true,
+    				arrowhead: 2,
+    				arrowsize: 1.5,
+    				arrowwidth: 2,
+    				arrowcolor: '#000000'
+    			}
+    		]
     	};
 
     	function onDataPointsUpdate() {

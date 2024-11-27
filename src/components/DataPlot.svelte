@@ -20,7 +20,23 @@
       b: 35,
       t: 35,
       pad: 0
-    }
+    },
+    //DRAWING A VECTOR
+    annotations: [{
+      x: 5,
+      y: 10,
+      xref: 'x',
+      yref: 'y',
+      ax: 0,
+      ay: 0,
+      axref: 'x',
+      ayref: 'y',
+      showarrow: true,
+      arrowhead: 2,
+      arrowsize: 1.5,
+      arrowwidth: 2,
+      arrowcolor: '#000000'
+    }]
   };
 
   $: {
