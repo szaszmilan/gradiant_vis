@@ -119,13 +119,14 @@
     font-family: 'Roboto', sans-serif;
   }
 
+
   .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60% 40%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
-    height: 100vh;
+    height: calc(100vh - 80px);
     box-sizing: border-box;
   }
 
@@ -136,7 +137,8 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    min-height: 0;
+    min-width: 0;
   }
 
   .controls-container {
@@ -144,6 +146,7 @@
     flex-direction: column;
     gap: 12px;
     font-size: 0.9em;
+    overflow-y: auto;
   }
 
   .control-group {
@@ -208,6 +211,7 @@
 </style>
 
 <main>
+  <h1 class="title">Linear Regression Visualizer</h1>
   <div class="grid-container">
     <div class="grid-item">
       <DataPlot {dataPoints} {currentSlope} {currentBias} />

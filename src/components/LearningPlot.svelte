@@ -23,7 +23,7 @@
     };
   
     function updatePlot() {
-      if (!plotDiv) return;
+      if (!plotDiv || losses.length === 0) return;
   
       const epochs = Array.from({ length: losses.length }, (_, i) => i);
       
@@ -47,12 +47,8 @@
   
       Plotly.react(plotDiv, data, layout, { responsive: true });
     }
-  
-    $: {
-      if (plotDiv && losses.length > 0) {
-        updatePlot();
-      }
-    }
+
+    $: currentEpoch, updatePlot();
   
     onMount(() => {
       if (losses.length > 0) {
